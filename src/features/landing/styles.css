@@ -1,0 +1,133 @@
+.landing {
+
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ececec;
+
+    img {
+      height: 30px;
+    }
+
+    .btns {
+      display: flex;
+      gap: 14px;
+    }
+
+    button {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+
+    .title {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    button {
+      font-size: 14px;
+      padding: 5px 10px;
+      width: fit-content;
+    }
+  }
+
+
+  .showcase-right,
+  .showcase-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 100px 0px;
+
+    .data {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    img {
+      width: 40%;
+    }
+  }
+
+  .why {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20vh;
+    margin-bottom: 10px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+
+    button {
+      font-size: 14px;
+      padding: 5px 10px;
+      width: fit-content;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+
+  }
+
+
+}
