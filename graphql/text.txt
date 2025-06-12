@@ -1,0 +1,106 @@
+query fetch($email: String!, $password: String!){
+  account(email: $email, password: $password) {
+    account_id
+    first_name
+    last_name
+    projects {
+      name
+      tables {
+        name
+        header {
+          Field
+        }
+        row
+      }
+    }
+  }
+}
+
+mutation createAccount($firstName: String!, $lastName: String!, $email: String!, $password: String!){
+  createAccount(first_name: $firstName, last_name: $lastName, email: $email, password: $password) {
+    first_name
+    account_id
+  }
+}
+
+mutation createProject($accountId: ID!, $name: String!){
+  createProject(account_id: $accountId, name: $name) {
+    project_id
+    name
+  }
+}
+
+mutation createTable{
+  createTable(
+    project_id: 1,
+    tableName: "users",
+    columns: [
+      { Field: "user_id", Type: "INT", Null: "NO", Key: "PRI", Default: "", Extra: "AUTO_INCREMENT" },
+      { Field: "name", Type: "VARCHAR(255)", Null: "NO", Key: "", Default: "", Extra: "" },
+      { Field: "email", Type: "VARCHAR(255)", Null: "YES", Key: "", Default: "", Extra: "" }
+    ]
+  )
+}
+
+mutation insertRow{
+  insertRow(
+    project_id: 1,
+    tableName: "users",
+    row: {
+      name: "ram",
+      email: "ram@example.com"
+    }
+  )
+}
+
+mutation deleteRow{
+  deleteRow(project_id: "1", tableName: "users", condition: { user_id: 1 })
+}
+
+mutation updateRow{
+  updateRow(
+    project_id: "1",
+    tableName: "users",
+    condition: { user_id: 2 },
+    newData: { name: "Dhiraj", email: "dhiraj@email.com" }
+  )
+}
+
+mutation addColumn{
+  addColumn(
+    project_id: "1",
+    tableName: "users",
+    column: {
+      Field: "status",
+      Type: "VARCHAR(50)",
+      Null: "YES",
+      Key: "",
+      Default: "active",
+      Extra: ""
+    }
+  )
+}
+
+mutation deleteColumn{
+  deleteColumn(
+    project_id: "1",
+    tableName: "users",
+    columnName: "status"
+  )
+}
+
+mutation updateColumn{
+  updateColumn(
+    project_id: "1",
+    tableName: "users",
+    columnName: "email",
+    newColumn: {
+      Field: "username",
+      Type: "VARCHAR(100)",
+      Null: "NO",
+      Key: "UNI",
+      Default: "",
+      Extra: ""
+    }
+  )
+}
